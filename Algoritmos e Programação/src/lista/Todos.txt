@@ -1,0 +1,334 @@
+//EXERCÍCIO 1
+public static void main(String[] args) {
+    int n1, n2, p;
+    Scanner input = new Scanner(System.in);
+    System.out.print("\nDigite o primeiro valor: ");
+    n1 = input.nextInt();
+    System.out.print("\nDigite o segundo valor: ");
+    n2 = input.nextInt();
+    p = n1 * n2;
+    System.out.print("O produto é: " + p);
+    input.close();
+}
+//EXERCÍCIO 2
+public static void main(String[] args) {
+    double b, x, result;
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("\nDigite a Base: ");
+    b = scanner.nextDouble();
+    System.out.print("\nDigite o Expoente: ");
+    x = scanner.nextDouble();
+    result = Math.pow(b, x);
+    System.out.println(b+" elevado a(o) "+x +" é: "+result);
+    scanner.close();
+}
+//EXERCÍCIO 3
+public static void main(String[] args) {
+    double a;
+    double b;
+    double square1;
+    double square2;
+    double SumSquares;
+    
+    Scanner input = new Scanner(System.in);
+    System.out.print("\nDigite o primeiro número: ");
+    a = input.nextDouble();
+    System.out.print("\nDigite o segundo núemro: ");
+    b = input.nextDouble();
+    square1 = a*a;
+    square2 = b*b;
+    SumSquares = square1 + square2;
+    System.out.println("A Soma dos Quadrados é: "+SumSquares);
+    input.close();
+}
+//EXERCÍCIO 4
+public static void main(String[] args) {
+    int a = 0, b = 0;
+    Scanner input = new Scanner(System.in);
+    System.out.println("Números consecutivos\n");
+    System.out.print("\nDigite o primeiro número: ");
+    a = input.nextInt();
+    System.out.print("\nDigite o segundo número: ");
+    b = input.nextInt();
+    System.out.println("Os consecutivos são, respectivamente: "+(a+1)+" e "+(b+1));
+    input.close();
+}
+//EXERCÍCIO 5
+public static void main(String[] args) {
+    double area;
+    Scanner input = new Scanner(System.in);
+    System.out.print("Insira o valor do L: ");
+    area = input.nextDouble();
+    area = Math.pow (area, 2);
+    System.out.print("A área do quadrado é: " + area);
+    input.close();
+}
+//EXERCÍCIO 6
+public static void main(String[] args){
+    double a, b, c, resultado;
+    double pi = 3.14159;
+    Scanner entrada = new Scanner (System.in);
+    System.out.println("Insira 3 valores");
+    System.out.print("\na: ");
+    a = entrada.nextDouble();
+    System.out.print("\nb: ");
+    b = entrada.nextDouble();
+    System.out.print("\nc: ");
+    c = entrada.nextDouble();
+    resultado = (a*c)/2;
+    System.out.println("A área do triângulo retângulo é " + resultado);
+    resultado = pi*(c*c);
+    System.out.println("A área do círculo (de raio C) é " + resultado);
+    resultado = (a+b)*c/2;
+    System.out.println("A área de um trapézio é " + resultado);
+    resultado = b*b;
+    System.out.println("A área de um quadrado de lado B é " + resultado);
+    resultado = a*b;
+    System.out.println("A área de um retângulo de lados A e B é " + resultado);
+    resultado = (a+b)*2;
+    System.out.println("O perimetro de um retângulo de lados A e B é " + resultado);
+    entrada.close();
+}
+//EXERCÍCIO 7
+public static void main(String[] args) {
+    Scanner entrada = new Scanner(System.in);
+    double a, b, resultado;
+    System.out.println("Insisra os valores");
+    System.out.print("A: ");
+    a = entrada.nextDouble();
+    System.out.print("B: ");
+    b = entrada.nextDouble();
+    resultado = (a*a)+(b*b);
+    resultado = Math.sqrt(resultado);
+    System.out.print("A hipotenusa é " + resultado);
+    entrada.close();
+}
+//EXERCÍCIO 8
+public static void main(String[] args) {
+    double a, b, c, d, resultado;
+    Scanner entrada = new Scanner(System.in);
+    System.out.print("Insira quatro valores");
+    System.out.print("\na: ");
+    a = entrada.nextDouble();
+    System.out.print("\nb: ");
+    b = entrada.nextDouble();
+    System.out.print("\nc: ");
+    c = entrada.nextDouble();
+    System.out.print("\nd: ");
+    d = entrada.nextDouble();
+    resultado = (a+b+c+d)/4;
+    System.out.println("A média aritmética dos quatro números é " + resultado);
+    entrada.close();
+}
+//EXERCÍCIO 9
+public static void main(String[] args) {
+    double horas, valor_por_hora, salario;
+    int cadastro;
+    Scanner entrada = new Scanner(System.in);
+    System.out.print("Insira o cadastro: ");
+    cadastro = entrada.nextInt();
+    System.out.print("Insira as horas trabalhadas: ");
+    horas = entrada.nextDouble();
+    System.out.print("Insira o valor por hora: ");
+    valor_por_hora = entrada.nextDouble();
+    salario = (horas*valor_por_hora);
+    System.out.println("Cadastro: " + cadastro);
+    System.out.print("O salário mensal é: " + salario);
+    entrada.close();
+}
+//EXERCÍCIO 10
+public static void main(String[] args) {
+    double Salario_Fixo, total_de_vendas, Salario;
+    String nome;
+    Scanner entrada = new Scanner(System.in);
+    System.out.print("Insira o nome: ");
+    nome = entrada.nextLine();
+    System.out.print("Insira o salário fixo: ");
+    Salario_Fixo = entrada.nextDouble();
+    System.out.print("Insira o total de vendas (em dinheiro): ");
+    total_de_vendas = entrada.nextDouble();
+    Salario = Salario_Fixo + (total_de_vendas*0.15);
+    System.out.println("Nome do vendedor: "+nome);
+    System.out.println("O total do salário é: R$" + Salario);
+   entrada.close(); 
+}
+//EXERCÍCIO 11
+public static void main(String[] args) {
+    double n;
+    Scanner input = new Scanner(System.in);
+    System.out.print("Insira um número: ");
+    n = input.nextDouble();
+    if(n < 0) {
+        System.out.print("Esse número negativo");
+    }else{
+        System.out.print("Esse número não é negativo");
+    }
+    input.close();
+}
+//EXERCÍCIO 12
+public static void main(String[] args) {
+    double L, R, a_circle, a_square;
+    double pi = 3.14159265359;
+    Scanner input = new Scanner(System.in);
+    System.out.println("Insira dois valores");
+    System.out.print("L: ");
+    L = input.nextDouble();
+    System.out.print("R: ");
+    R = input.nextDouble();
+    a_square = Math.pow(L, 2);
+    a_circle = pi*Math.pow(R, 2);
+    System.out.print("Com os valores informados, a maior área é do: ");
+    if (a_circle > a_square) {
+        System.out.println("círculo");
+    }else{
+        System.out.println("quadrado");
+    }
+    input.close();
+}
+//EXERCÍCIO 13
+public static void main(String[] args) {
+    double a, b, c;
+    Scanner input = new Scanner(System.in);
+    System.out.println("Insira 3 números");
+    System.out.print("A: ");
+    a = input.nextDouble();
+    System.out.print("B: ");
+    b = input.nextDouble();
+    System.out.print("C: ");
+    c = input.nextDouble();
+    if (a > b && a > c) {
+        System.out.print("O maior é " +a); 
+    }else if (b > a && b > c) {
+        System.out.print("O maior é " +b); 
+    }else if (c > a && c > b) {
+        System.out.print("O maior é " +c); 
+    }else {
+        System.out.println("Não há um único número maior entre: "+a+", "+b+" e "+c); 
+    }
+    input.close();
+}
+//EXERCÍCIO 14
+public static void main(String[] args) {
+    double a, b, result;
+    Scanner input = new Scanner(System.in);
+    System.out.println("Insira dois números");
+    System.out.print("A: ");
+    a = input.nextDouble();
+    System.out.print("B: ");
+    b = input.nextDouble();
+    System.out.println("Dividindo o maior pelo menor: ");
+    if (a > b) {
+        result = a/b;
+        System.out.print("A divisão de: "+a+" dividido por "+b+" é: "+result); 
+    }else{
+        result = b/a;
+        System.out.print("A divisão de: "+b+" por "+a+" é: "+result); }
+    input.close();
+}
+//EXERCÍCIO 15
+public static void main(String[] args) {
+    double a, b, c;
+    double x1;
+    double x2;
+    double delta;
+    Scanner input = new Scanner(System.in);
+    System.out.print("\n\nIsira a: ");
+    a = input.nextDouble(); 
+    System.out.print("Isira b: ");
+    b = input.nextDouble();
+    System.out.print("Isira c: ");
+    c = input.nextDouble();
+    delta = (b*b)-4*a*c;
+    if (a == 0 || delta < 0){
+        System.out.print("Impossível de calcular");
+    }else{
+        delta = Math.sqrt(delta);
+        x1 = (-b + delta)/(2*a);
+        x2 = (-b - delta)/(2*a);
+        System.out.println("x1 = "+x1);
+        System.out.println("x2 = "+x2);
+    }
+    input.close();
+}
+//EXERCÍCIO 16
+public static void main(String[] args) {
+    int start, end;
+    int time_length;
+    Scanner input = new Scanner(System.in);
+    System.out.println("\nCalcular duração no formato 24 horas");
+    System.out.print("Insira o horário inicial: ");
+    start = input.nextInt();
+    System.out.print("Insira o horário final: ");
+    end = input.nextInt();
+    if (start < end) {
+        time_length = end - start;}
+    else if (start > end) {
+        time_length = (24 - start) + end;
+    }else{
+        time_length = 24;
+    }
+    System.out.print("A duração foi de "+time_length+"h");
+    input.close();
+}
+//EXERCÍCIO 17
+public static void main(String[] args) {
+    double a, b, c, d;
+    double sumCD, sumAB;
+    Scanner input = new Scanner(System.in);
+    System.out.println("\nInsira 4 valores");
+    System.out.print("\nA: ");
+    a = input.nextInt();
+    System.out.print("\nB: ");
+    b = input.nextInt();
+    System.out.print("\nC: ");
+    c = input.nextInt();
+    System.out.print("\nD: ");
+    d = input.nextInt();
+    sumCD = c+d;
+    sumAB = a+b;
+    if ((b > c) && (d > a) && (sumCD > sumAB) && (c > 0) && (d > 0) && (a % 2 == 0)) {
+        System.out.println("valores aceitos");
+    }else{
+        System.out.println("valores não aceitos");
+    }
+    input.close();
+}
+//EXERCÍCIO 18
+public static void main(String[] args) {
+    double a, b, c, aux;
+    boolean check = false;
+    Scanner input = new Scanner(System.in);
+    System.out.print("digite a: ");
+    a = input.nextDouble();
+    System.out.print("digite b: ");
+    b = input.nextDouble();
+    System.out.print("digite c: ");
+    c = input.nextDouble();
+    do
+    {
+        if (b < c){
+            aux = c;
+            c = b;
+            b = aux;
+        }else if (a < b){
+            aux = b;
+            b = a;
+            a = aux;
+        }else{
+            check = true; }
+    } while (check == false);
+    if (a >= b + c) {
+        System.out.println("A figura não forma um triângulo");
+        check = false; }
+    if (Math.pow(a, 2) == (Math.pow(b, 2) + Math.pow(c, 2)) && (check != false)) {
+        System.out.println("triângulo retângulo"); }
+    if (Math.pow(a, 2) > (Math.pow(b, 2) + Math.pow(c, 2)) && (check != false)) {
+        System.out.println("triângulo obtusângulo"); }
+    if (Math.pow(a, 2) < (Math.pow(b, 2) + Math.pow(c, 2)) && (check != false)) {
+        System.out.println("triângulo acutângulo"); }
+    if (a == b && b == c) {
+        System.out.println("triângulo equilátero"); }
+    if ((a != b && b == c) || (b != c && c == a) || (c != a && a == b) && (check != false)) {
+        System.out.println("triângulo isóceles"); }
+    input.close();
+}
