@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Ex01 {
     public static void main(String[] args){
-        String alternativas[] = {"alternativa1", "alternativa2", "alternativa3", "alternativa4", "alternativa5"};
-        String answer = alternativas[0]; //alternativa1
+        String questao = "Simplificando a expressão (a3 · b-7 · a2) : (a2 · b-4)2, encontraremos:";
         String letter[] = {"a", "b", "c", "d", "e",};
+        String alternativas[] = {"ab", "a/b", "b", "a²b", "ab²"};
+        String answer = alternativas[0];
         String choice = "", correct_choice = "";
         Scanner scanner = new Scanner (System.in);
         ArrayList<String> ballot_box = new ArrayList<String>();
@@ -16,7 +17,7 @@ public class Ex01 {
         }
         do
         {
-            System.out.println("\nQUESTÃO");
+            System.out.println("\n"+questao);
             if(choice != "NULL"){
                 Collections.shuffle(ballot_box);}
             for(i = 0; i < alternativas.length; i++) {
