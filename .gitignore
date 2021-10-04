@@ -120,3 +120,4 @@ nbdist/
 *.xml
 *.properties
 *.mf
+*src/exemplo_externo/JogoExmplo1.java

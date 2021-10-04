@@ -1,54 +1,57 @@
-/*
-Implemente uma questão que embaralhe as alternativas toda vez que errar;
-*/
 package ado7;
-import java.util.Scanner;
 import java.util.Collections;
 import java.util.ArrayList;
+import java.util.Scanner;
 public class Ex01 {
-    private static Scanner scanner;
-
-    public static void main(String[] args) {
-        ArrayList<Character> ballot_box = new ArrayList<Character>();
-        Scanner scanner = new Scanner(System.in);
-        char[] alt = {'a', 'b', 'c', 'd', 'e'};
-        boolean resposta = false;
-        String choice;
+    public static void main(String[] args){
+        String alternativas[] = {"alternativa1", "alternativa2", "alternativa3", "alternativa4", "alternativa5"};
+        String answer = alternativas[0]; //alternativa1
+        String letter[] = {"a", "b", "c", "d", "e",};
+        String choice = "", correct_choice = "";
+        Scanner scanner = new Scanner (System.in);
+        ArrayList<String> ballot_box = new ArrayList<String>();
         int i;
-        for(i = 0; i < alt.length; i++) {ballot_box.add(alt[i]);}
+        for(i = 0; i < alternativas.length; i++) {
+            ballot_box.add(alternativas[i]);
+        }
         do
         {
-            System.out.println("Questão");
-            Collections.shuffle(ballot_box);
-            switch (ballot_box.get(i))
+            System.out.println("\nQUESTÃO");
+            if(choice != "NULL"){
+                Collections.shuffle(ballot_box);}
+            for(i = 0; i < alternativas.length; i++) {
+                System.out.println(letter[i]+") "+ballot_box.get(i));
+                if(ballot_box.get(i).equals(answer)) {
+                    correct_choice = letter[i]; }
+            }
+            System.out.print("Digite a resposta: ");
+            choice = scanner.nextLine();
+            switch(choice)
             {
-                case 'a':
-                    System.out.println(alt[0]+")~~~~~~~~~~~~~~~~");
-                    resposta = true;
-                    break;
-                case 'b':
-                    System.out.println(alt[1]+")~~~~~~~~~~~~~~~~");
-                    resposta = true;
-                    break;
-                case 'c':
-                    System.out.println(alt[2]+")~~~~~~~~~~~~~~~~");
-                    resposta = true;
-                    break;
-                case 'd':
-                    System.out.println(alt[3]+")~~~~~~~~~~~~~~~~");
-                    resposta = true;
-                    break;
-                case 'e':
-                    System.out.println(alt[4]+")~~~~~~~~~~~~~~~~");
-                    resposta = true;
+                case "a":
+                case "A":
+                case "b":
+                case "B":
+                case "c":
+                case "C":
+                case "d":
+                case "D":
+                case "e":
+                case "E":
+                    if(choice.equalsIgnoreCase(correct_choice)){
+                        System.out.print("Resposta Correta");
+                        choice = "ok";
+                        break;
+                    }else{
+                        System.out.print("Resposta incorreta");}
+                    scanner.nextLine();
                     break;
                 default:
-                    System.out.println("Opção inválida ou inexistente");
+                    System.out.print("Opção inválida ou inexistente");
+                    choice = "NULL";
+                    scanner.nextLine();
             }
-            i++;
-            System.out.print("Digite sua opção -> ");
-            choice = scanner.next();
-        } while(resposta == false);
+        }while(choice != "ok");
         scanner.close();
     }
 }
