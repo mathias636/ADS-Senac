@@ -6,7 +6,31 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Created on : 16/02/2022, 21:40:41
     Author     : matheus.gsantos21
 */
+/* body {
+    border-color: red;
+    border-style: solid;
+    border-width: 1px;
+} */
 
 body {
-    font-family: "Arial", "Helvetica", sans-serif;
+    color: #333333;
+    font-family: "Lucida Sans Unicode", "Arial", "Helvetica", sans-serif;
+}
+
+h1 {
+    background-image: url(../img/sobre-background.jpg);
+}
+
+h2 {
+    border-bottom: 2px solid #333333;
+}
+
+figure {
+    background-color: #F2EDED;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+figcaption{
+    font-style: italic;
 }
