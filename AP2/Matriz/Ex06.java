@@ -3,23 +3,19 @@ package Matriz;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Ex02 {
+public class Ex06 {
     public static void main(String[] args) {
-        int Li;
-        int Cj;
         Scanner scanner = new Scanner(System.in);
-
-        Li = scanner.nextInt();
-        Cj = scanner.nextInt();
-
-        int[][] a = new int[Li][Cj];
+        int Li = scanner.nextInt();
+        int Cj = scanner.nextInt();
+        int[][] A;
+        int[][] B;
         
-        a = gerrarMatriz(Li, Cj);
-        System.err.println();
-        imprimir(a);
-        System.err.println("\n----\n");
-        imprimir(TranspoeMatriz(a));
-
+        imprimir(A = gerrarMatriz(Li, Cj));
+        System.out.println();
+        imprimir(B = gerrarMatriz(Li, Cj));
+        System.out.println();
+        imprimir(somarMatrizes(A, B));
         scanner.close();
     }
 
@@ -35,14 +31,14 @@ public class Ex02 {
         return A;
     }
 
-    private static int[][] TranspoeMatriz(int[][] a) {
-        int[][] At = new int[a[0].length][a.length]; // inicializa invertendo linhas e colunas
-        for(int i = 0; i < a.length; i++){
-            for(int j = 0; j < a[0].length; j++){
-                At[j][i] = a[i][j];
+    public static int[][] somarMatrizes(int[][] A, int[][] B){
+        int[][] C = new int[A.length][A[0].length];
+        for(int i = 0; i < A.length; i++){
+            for(int j = 0; j < A[0].length; j++){
+                C[i][j] += A[i][j] + B[i][j];
             }
         }
-        return At;
+        return C;
     }
 
     public static void imprimir(int[][] A){

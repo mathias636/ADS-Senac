@@ -3,24 +3,32 @@ package Matriz;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Ex02 {
+public class Ex04 {
     public static void main(String[] args) {
-        int Li;
-        int Cj;
         Scanner scanner = new Scanner(System.in);
-
-        Li = scanner.nextInt();
-        Cj = scanner.nextInt();
-
-        int[][] a = new int[Li][Cj];
         
-        a = gerrarMatriz(Li, Cj);
-        System.err.println();
-        imprimir(a);
-        System.err.println("\n----\n");
-        imprimir(TranspoeMatriz(a));
+        System.out.println();
+        int Li = scanner.nextInt();
+        int Cj = Li;
+
+        int[][] Matriz;
+
+        Matriz = gerrarMatriz(Li, Cj);
+
+        imprimir(Matriz);
+
+        System.out.println("soma diagonal = "+SomaDiagonal(Matriz));
 
         scanner.close();
+    }
+
+    private static int SomaDiagonal(int[][] A) {
+        int soma = 0;
+
+        for(int i = 0; i < A.length; i++){
+            soma += A[i][i];
+        }
+        return soma;
     }
 
     public static int[][] gerrarMatriz(int Li, int Cj){
@@ -35,16 +43,6 @@ public class Ex02 {
         return A;
     }
 
-    private static int[][] TranspoeMatriz(int[][] a) {
-        int[][] At = new int[a[0].length][a.length]; // inicializa invertendo linhas e colunas
-        for(int i = 0; i < a.length; i++){
-            for(int j = 0; j < a[0].length; j++){
-                At[j][i] = a[i][j];
-            }
-        }
-        return At;
-    }
-
     public static void imprimir(int[][] A){
         for(int i = 0; i < A.length; i++){
             for(int j = 0; j < A[i].length; j++){
@@ -53,4 +51,5 @@ public class Ex02 {
             System.out.printf("\n");
         }
     }
+    
 }
